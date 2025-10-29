@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+
 print("in Base setting")
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -114,9 +115,4 @@ TIME_ZONE = "UTC"  # Or your desired timezone, e.g., "Asia/Kolkata"
 USE_TZ = True  # Ensures Django stores times in UTC
 
 
-#ADMIN DASHBOARD
-from django.contrib import admin
 
-admin.site.site_header = "Quizee Admin"
-admin.site.site_title = "Quizee Portal"
-admin.site.index_title = "Welcome to Quizee Dashboard"
