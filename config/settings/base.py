@@ -112,3 +112,11 @@ REST_FRAMEWORK = {
 
 TIME_ZONE = "UTC"  # Or your desired timezone, e.g., "Asia/Kolkata"
 USE_TZ = True  # Ensures Django stores times in UTC
+
+
+#ADMIN DASHBOARD
+from django.contrib import admin
+
+admin.site.site_header = "Quizee Admin"
+admin.site.site_title = "Quizee Portal"
+admin.site.index_title = "Welcome to Quizee Dashboard"
