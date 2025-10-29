@@ -5,8 +5,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.db import transaction
 from django.db import models
 from django.utils import timezone
-
-from apps.core.enums import RoleEnum
+from apps.account.enums import RoleEnum
 
 
 class UserManager(BaseUserManager):
