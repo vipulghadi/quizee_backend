@@ -114,8 +114,8 @@ class QuestionOptionModel(TimeStampedModel):
 
 class QuestionAnswerModel(TimeStampedModel):
     question=models.ForeignKey(QuestionModel,on_delete=models.CASCADE)
-    single_select_answer=models.ForeignKey(QuestionOptionModel,on_delete=models.SET_NULL,null=True)
-    multi_select_answer=models.ManyToManyField(QuestionOptionModel,blank=True)
+    single_select_answer=models.ForeignKey(QuestionOptionModel,on_delete=models.SET_NULL,null=True,related_name="single_select_answer")
+    multi_select_answer=models.ManyToManyField(QuestionOptionModel,blank=True,related_name="multi_select_answer")
     answer=models.TextField(blank=False,null=True)
     is_deleted = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -124,6 +124,7 @@ class QuestionAnswerModel(TimeStampedModel):
         return self.answer[:40] if self.answer else ''
     class Meta:
         db_table = 'question_answer'
+
 
 
 

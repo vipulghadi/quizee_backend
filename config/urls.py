@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 API_VERSION = settings.API_VERSION
 urlpatterns = [
 
-    path('admin/', admin.site.urls),
+    path('god/', admin.site.urls),
 
 ]
 

@@ -31,14 +31,15 @@ CORS_ALLOW_METHODS = [
     ]
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.getenv('LOCAL_DB_NAME'),
-    #     'USER': os.getenv('LOCAL_DB_USER'),
-    #     'PASSWORD': os.getenv('LOCAL_DB_PASSWORD'),
-    #     'HOST': os.getenv('LOCAL_DB_HOST'),
-    #     'PORT': os.getenv('LOCAL_DB_PORT'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+    }
 }
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
