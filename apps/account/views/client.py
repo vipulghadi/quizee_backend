@@ -13,5 +13,6 @@ class CurrentUserAPIView(APIView):
             message="current user",
             data=serializer.data,
             status_code=status.HTTP_200_OK,
-            success=True
+            success=True,
+            errors=[]
         )

@@ -22,7 +22,7 @@ def custom_exception_handler(exc, context):
     print("-----------")
     response = exception_handler(exc, context)
     print(response)
-    print("type",type(response))
+    print((response))
     print(type(exc))
 
     if isinstance(exc, ValidationError):
@@ -49,6 +49,8 @@ def custom_exception_handler(exc, context):
         )
 
     elif isinstance(exc, (NotAuthenticated, AuthenticationFailed)):
+        print(exc)
+
         return api_response(
             data=None,
             status_code=status.HTTP_401_UNAUTHORIZED,
