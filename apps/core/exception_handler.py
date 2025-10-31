@@ -56,7 +56,7 @@ def custom_exception_handler(exc, context):
             status_code=status.HTTP_401_UNAUTHORIZED,
             message="Authentication Failed",
             success=False,
-            errors=[]
+            errors=['Authentication Failed']
         )
 
 
@@ -64,7 +64,7 @@ def custom_exception_handler(exc, context):
         return api_response(
             data=None,
             status_code=status.HTTP_403_FORBIDDEN,
-            message="Permission Denied",
+            message="You do not have permission to perform this action.",
             success=False,
             errors=[]
         )

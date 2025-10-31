@@ -9,9 +9,11 @@ urlpatterns = [
 
     path('god/', admin.site.urls),
     path(f'api/{API_VERSION}/auth/', include('apps.authentication.urls.client')),
-    path(f'api/{API_VERSION}/auth/admin/', include('apps.authentication.urls.admin')),
+    path(f'api/{API_VERSION}/admin/auth/', include('apps.authentication.urls.admin')),
 
-    path(f'api/{API_VERSION}/account/', include('apps.account.urls.client'))
+    path(f'api/{API_VERSION}/account/', include('apps.account.urls.client')),
+    path(f'api/{API_VERSION}/admin/questionbank/', include('apps.questionbank.urls.admin')),
+
 ]
 
 if settings.DEBUG:

@@ -4,6 +4,7 @@ class RoleEnum(StrEnum):
     SUPER_ADMIN = "SUPER_ADMIN"
     ADMIN = "ADMIN"
     USER = "USER"
+    SME  = "SME"
 
     @classmethod
     def choices(cls):

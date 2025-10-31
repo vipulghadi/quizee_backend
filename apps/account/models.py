@@ -6,6 +6,7 @@ from django.db import transaction
 from django.db import models
 from django.utils import timezone
 from apps.account.enums import RoleEnum
+from apps.core.models import BaseModel
 
 
 class UserManager(BaseUserManager):
@@ -46,7 +47,7 @@ class UserManager(BaseUserManager):
 
 
 
-class UserModel(AbstractBaseUser,PermissionsMixin):
+class UserModel(AbstractBaseUser,PermissionsMixin,BaseModel):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField( max_length=255,null=True,blank=True)
     last_name = models.CharField( max_length=255,null=True,blank=True)
@@ -55,9 +56,8 @@ class UserModel(AbstractBaseUser,PermissionsMixin):
     role=models.CharField( max_length=50,choices=RoleEnum.choices(),default=RoleEnum.USER)
     is_staff=models.BooleanField(default=False)
     is_superuser=models.BooleanField(default=False)
-    is_active=models.BooleanField(default=False)
     date_joined=models.DateTimeField(default=timezone.now)
-    updated_at=models.DateTimeField(auto_now=True)
+
 
     USERNAME_FIELD='email'
     objects=UserManager()
